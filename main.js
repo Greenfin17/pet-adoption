@@ -237,3 +237,55 @@ const petBuilder = (pet) => {
 }
 
 petBuilder(pets);
+
+const handleButtonClick = (e) => {
+  const buttonId = e.target.id;
+
+  if(buttonId === 'all') {
+    //White
+    document.querySelector('body').style.backgroundColor = 'rgb(185, 196, 185)';
+  } else if (buttonId === 'dog') {
+    //LIGHT MODE
+    document.querySelector('body').style.backgroundColor = '#ccf';
+  } else if (buttonId === 'cat') {
+    //MEDIUM
+    document.querySelector('body').style.backgroundColor = '#ddd';
+  } else if (buttonId === 'dino') {
+    //DEFAULT
+    document.querySelector('body').style.backgroundColor = 'rgb(175, 196, 175)';
+  }
+  const selectedPets = [];
+  for(let i = 0; i  < pets.length; i++) {
+    if(pets[i].typeOfPet === buttonId) {
+      console.log(pets[i].typeOfPet);
+      selectedPets.push(pets[i]);
+    }
+    if(buttonId === 'all') {
+      filtered = false;
+      petBuilder(pets);
+    } else {
+      filtered = true;
+      petBuilder(selectedPets);
+    }
+  }
+}
+// C in "CRUD" Create
+const buttonEvents = () => {
+  document.querySelector('#all').addEventListener('click', handleButtonClick);
+  document.querySelector('#dog').addEventListener('click', handleButtonClick);
+  document.querySelector('#cat').addEventListener('click', handleButtonClick );
+  document.querySelector('#dino').addEventListener('click', handleButtonClick );
+  //Target delete button
+  //document.querySelector('#pets').addEventListener('click', deletePet);
+
+  //document.querySelector('form').addEventListener('submit', getFormInfo);
+
+} 
+
+const init = () => {
+  buttonEvents();
+  petBuilder(pets);
+
+}
+
+init();
