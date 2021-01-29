@@ -43,3 +43,15 @@ h1 {
   text-align: center;
   font-size: 1.1em;
 }
+
+.cat {
+  background-color: rgb(247, 232, 247)
+}
+
+.dog {
+  background-color: rgb(197, 238, 238);
+}
+
+.dino {
+  background-color: rgb(231, 195, 195);
+}
