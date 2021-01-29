@@ -211,14 +211,4 @@ const pets = [
     }
   ];
 
-
-const printToDom = (divID, textToPrint)  => {
-  const selectedDiv = document.querySelector(divID);
-  selectedDiv.innerHTML = textToPrint;
-}
-
-const petBuilder = (pet) => {
-  let domStrin = '';
-  let i = 0;
-  for(let item of pet) {
-    domString += `
+console.log("CONNECTED");
