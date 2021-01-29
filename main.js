@@ -228,7 +228,7 @@ const petBuilder = (pet) => {
         <div class="img-container" style="background-image: url('${item.imageUrl}');"></div>
         <p class="card-text pet-color">Favorite Color:  ${item.color}</p>
         <p class="card-text pet-skill">${item.specialSkill}</p>
-        <p class="card-text pet-type">${item.typeOfPet}</p>
+        <p class="card-text pet-type ${item.typeOfPet}">${item.typeOfPet}</p>
       </div>
       </div>`; 
       i++;
