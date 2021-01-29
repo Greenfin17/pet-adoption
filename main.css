@@ -1,8 +1,45 @@
 body {
   margin 0;
-  background-color: #88FF88;
+  background-color: #a5caa5;
+}
+
+#pets{
+  margin-bottom: 5%;
 }
 
 h1 { 
   text-align: center;
+  margin: 30px 0 20px 0;
+}
+
+.img-container {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.my-2 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.pet-name {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.pet-color {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.pet-skill {
+  text-align: justify;
+  min-height: 4em; 
+}
+
+.pet-type {
+  text-align: center;
+  font-size: 1.1em;
 }

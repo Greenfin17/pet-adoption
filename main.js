@@ -11,7 +11,7 @@ const pets = [
       color: "Poop-Colored",
       specialSkill: "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
       typeOfPet: "dino",
-      imageUrl: "http://www.jozilife.co.za/wp-content/uploads/The-Dino-Expo.jpg"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRubQHJENKGqFfN8WsOHHcWYLKog9oKQbTUUw&usqp=CAU"
     },
     {
       name: "Whiskers",
@@ -53,7 +53,7 @@ const pets = [
       color: "Grey",
       specialSkill: "Comfortable in the outdoors for up to eight hours.",
       typeOfPet: "dino",
-      imageUrl: "http://www.theouthousers.com/images/jck//ThanosCopter/news/grumpasaur.jpg"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6FrPTbHd3v7xC-lJ7zDoLfzFtQFKrN6--jQ&usqp=CAU"
     },
     {
       name: "Sassy",
@@ -109,7 +109,7 @@ const pets = [
       color: "Poop-Colored",
       specialSkill: "Drives at a safe rate of speed in snow or rain.",
       typeOfPet: "dino",
-      imageUrl: "https://images.readwrite.com/wp-content/uploads/2018/03/t-rex-dino-quiz-e1490854556549.jpg"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw-COW2rPlijKl2kMytK2hWuigAq_nk7boHQ&usqp=CAU"
     },
     {
       name: "Muffin",
@@ -123,7 +123,7 @@ const pets = [
       color: "Poop-Colored",
       specialSkill: "Proficient in air guitar",
       typeOfPet: "dino",
-      imageUrl: "https://www.nation.co.ke/image/view/-/4078922/highRes/1742693/-/maxw/600/-/1453yvh/-/DINO.jpg"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsTeZyy7Zdy0Min4ofoZgxQpH2EV8lO5OrQA&usqp=CAU"
     },
     {
       name: "Callie",
@@ -144,14 +144,14 @@ const pets = [
       color: "Red",
       specialSkill: "Owns a Nintendo Power Glove.",
       typeOfPet: "dino",
-      imageUrl: "https://img.buzzfeed.com/buzzfeed-static/static/2015-11/2/12/enhanced/webdr15/anigif_enhanced-29802-1446485228-10.gif?crop=250:165;0,0&downsize=715"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyKjB25V6dkpJV2KaVXmoJlmxFF3FsM2VH9g&usqp=CAU"
     },
     {
       name: "Snuggles",
       color: "Orange",
       specialSkill: "Is comfortable with jokes about his receding hairline.",
       typeOfPet: "cat",
-      imageUrl: "http://funnyanimalphoto.com/wp-content/uploads/2013/08/cat_caught_mouse_thegatewaypundit.jpg"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8bVPK9Xb7owNSKT_Oe4zV--I3GBQHtmosA&usqp=CAU"
     },
     {
       name: "Buddy",
@@ -172,7 +172,7 @@ const pets = [
       color: "Red",
       specialSkill: "Knows the words to 4 rap songs.",
       typeOfPet: "cat",
-      imageUrl: "http://funbk.s3.amazonaws.com/wp-content/uploads/2016/06/funny-cat-video-which-will-make-you-laugh-louder.jpg"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8bVPK9Xb7owNSKT_Oe4zV--I3GBQHtmosA&usqp=CAU"
     },
     {
       name: "Bubba",
@@ -207,8 +207,33 @@ const pets = [
       color: "Red",
       specialSkill: "Doesn’t get weirded out by the word “moist.”",
       typeOfPet: "dino",
-      imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkdf8wYw91f0vEolZV5POeFKHdMDLX8_hj_w&usqp=CAU"
     }
   ];
 
 console.log("CONNECTED");
+
+const printToDom = (divID, textToPrint)  => {
+  const selectedDiv = document.querySelector(divID);
+  selectedDiv.innerHTML = textToPrint;
+}
+
+const petBuilder = (pet) => {
+  let domString = '';
+  let i = 0;
+  for(let item of pet) {
+  domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
+        <div class="card-body">
+        <p class="card-text pet-name">${item.name}</p>
+        <div class="img-container" style="background-image: url('${item.imageUrl}');"></div>
+        <p class="card-text pet-color">Favorite Color:  ${item.color}</p>
+        <p class="card-text pet-skill">${item.specialSkill}</p>
+        <p class="card-text pet-type">${item.typeOfPet}</p>
+      </div>
+      </div>`; 
+      i++;
+  };
+   printToDom('#pets', domString);
+}
+
+petBuilder(pets);
