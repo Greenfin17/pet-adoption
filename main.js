@@ -214,7 +214,7 @@ const pets = [
 console.log("CONNECTED");
 
 const printDom = (divID, textToPrint)  => {
-  const selectedDiv = document.querySelector(divID).innerHTML = textToPrint;
+  document.querySelector(divID).innerHTML = textToPrint;
 }
 
 const petBuilder = (pet) => {
