@@ -10,14 +10,14 @@ const pets = [
       name: "Trouble",
       color: "Poop-Colored",
       specialSkill: "Just picks the tomatoes off of a sandwich instead of requesting a whole new sandwich.",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRubQHJENKGqFfN8WsOHHcWYLKog9oKQbTUUw&usqp=CAU"
     },
     {
       name: "Whiskers",
       color: "Yellow",
       specialSkill: "Can prove he is a real man by drinking whiskey.",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "https://mydinosaurs.com/wp-content/uploads/2017/02/2-3-600x400.jpg"
     },
     {
@@ -52,7 +52,7 @@ const pets = [
       name: "Ginger",
       color: "Grey",
       specialSkill: "Comfortable in the outdoors for up to eight hours.",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6FrPTbHd3v7xC-lJ7zDoLfzFtQFKrN6--jQ&usqp=CAU"
     },
     {
@@ -73,7 +73,7 @@ const pets = [
       name: "Coco",
       color: "Orange",
       specialSkill: "Can be around food without staring creepily at it.",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "http://www.cantref.com/userfiles/events/walking%20dino.jpg?w=600"
     },
     {
@@ -108,7 +108,7 @@ const pets = [
       name: "Smokey",
       color: "Poop-Colored",
       specialSkill: "Drives at a safe rate of speed in snow or rain.",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw-COW2rPlijKl2kMytK2hWuigAq_nk7boHQ&usqp=CAU"
     },
     {
@@ -122,7 +122,7 @@ const pets = [
       name: "Salem",
       color: "Poop-Colored",
       specialSkill: "Proficient in air guitar",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsTeZyy7Zdy0Min4ofoZgxQpH2EV8lO5OrQA&usqp=CAU"
     },
     {
@@ -130,7 +130,7 @@ const pets = [
       color: "Blue",
       specialSkill: "Listens attentively to boring stories.",
       typeOfPet: "dog",
-      imageUrl: "http://dailynewsdig.com/wp-content/uploads/2014/03/Creative-And-Funny-Dog-Stock-Photography-Pictures-2.jpg"
+      imageUrl: "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
     },
     {
       name: "Spooky",
@@ -143,7 +143,7 @@ const pets = [
       name: "Miss kitty",
       color: "Red",
       specialSkill: "Owns a Nintendo Power Glove.",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyKjB25V6dkpJV2KaVXmoJlmxFF3FsM2VH9g&usqp=CAU"
     },
     {
@@ -185,7 +185,7 @@ const pets = [
       name: "Chloe",
       color: "Green",
       specialSkill: "Admits he is wrong",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "https://assets.creationmuseum.org/img/pages/1703-DinoDen-TwoCard.jpg"
     },
     {
@@ -206,7 +206,7 @@ const pets = [
       name: "Lucy",
       color: "Red",
       specialSkill: "Doesn’t get weirded out by the word “moist.”",
-      typeOfPet: "dino",
+      typeOfPet: "dinosaur",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkdf8wYw91f0vEolZV5POeFKHdMDLX8_hj_w&usqp=CAU"
     }
   ];
@@ -214,25 +214,59 @@ const pets = [
 console.log("CONNECTED");
 
 const printDom = (divID, textToPrint)  => {
-  const selectedDiv = document.querySelector(divID).innerHTML = textToPrint;
+  document.querySelector(divID).innerHTML = textToPrint;
 }
 
-const petBuilder = (pet) => {
+const petBuilder = (pets) => {
   let domString = '';
   let i = 0;
-  for(let item of pet) {
-  domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
+  for(let item of pets) {
+    domString += 
+      `<div class="card my-3" style="width: 20rem;" id=${i}>
         <div class="card-body">
-        <p class="card-text pet-name">${item.name}</p>
-        <div class="img-container" style="background-image: url('${item.imageUrl}');"></div>
-        <p class="card-text pet-color">Favorite Color:  ${item.color}</p>
-        <p class="card-text pet-skill">${item.specialSkill}</p>
-        <p class="card-text pet-type ${item.typeOfPet}">${item.typeOfPet}</p>
-      </div>
+          <p class="card-text pet-name">${item.name}</p>
+          <div class="img-container" style="background-image: url('${item.imageUrl}');"></div>
+          <p class="card-text pet-color">Favorite Color:  ${item.color}</p>
+          <p class="card-text pet-skill">${item.specialSkill}</p>
+          <p class="card-text pet-type ${item.typeOfPet}">${item.typeOfPet}</p>
+        </div>
       </div>`; 
-      i++;
+    i++;
   };
    printDom('#pets', domString);
 }
 
-petBuilder(pets);
+
+const buttonClick = (e) => {
+  const button_Id = e.target.id;
+
+  const selectedPets = [];
+  for(let i = 0; i  < pets.length; i++) {
+    if(pets[i].typeOfPet === button_Id) {
+      selectedPets.push(pets[i]);
+    }
+    if(button_Id === 'all') {
+      petBuilder(pets);
+    } else {
+      petBuilder(selectedPets);
+    }
+  }
+}
+
+
+const buttonEvents = () => {
+  document.querySelector('#all').addEventListener('click', buttonClick);
+  document.querySelector('#dog').addEventListener('click', buttonClick);
+  document.querySelector('#cat').addEventListener('click', buttonClick );
+  document.querySelector('#dinosaur').addEventListener('click', buttonClick );
+
+
+} 
+
+const init = () => {
+  buttonEvents();
+  petBuilder(pets);
+
+}
+
+init();
