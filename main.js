@@ -213,9 +213,8 @@ const pets = [
 
 console.log("CONNECTED");
 
-const printToDom = (divID, textToPrint)  => {
-  const selectedDiv = document.querySelector(divID);
-  selectedDiv.innerHTML = textToPrint;
+const printDom = (divID, textToPrint)  => {
+  const selectedDiv = document.querySelector(divID).innerHTML = textToPrint;
 }
 
 const petBuilder = (pet) => {
@@ -233,7 +232,7 @@ const petBuilder = (pet) => {
       </div>`; 
       i++;
   };
-   printToDom('#pets', domString);
+   printDom('#pets', domString);
 }
 
 petBuilder(pets);
