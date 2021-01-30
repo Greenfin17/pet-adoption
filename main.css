@@ -1,7 +1,39 @@
 body {
   margin 0;
-  background-color: #a5caa5;
+  background-color: #b6cab6;
 }
+
+#pets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#all {
+  background-color: #22aa22;
+}
+
+#dog {
+  background-color: #aa2222;
+}
+.dog {
+  background-color: #faa9a9;
+}
+
+#cat {
+  background-color: #aa80cc;
+}
+.cat {
+  background-color: #bb90ee;
+}
+
+#dinosaur {
+  background-color:#c7c404
+}
+.dinosaur {
+  background-color: #f5f790;
+}
+
 
 #pets{
   margin-bottom: 5%;
@@ -13,13 +45,12 @@ h1 {
 }
 
 .img-container {
-  height: 200px;
+  height: 225px;
   background-size: cover;
   background-position: center;
-  text-align: center;
 }
 
-.my-2 {
+.my-3 {
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -42,16 +73,4 @@ h1 {
 .pet-type {
   text-align: center;
   font-size: 1.1em;
-}
-
-.cat {
-  background-color: rgb(247, 232, 247)
-}
-
-.dog {
-  background-color: rgb(197, 238, 238);
-}
-
-.dino {
-  background-color: rgb(231, 195, 195);
 }
