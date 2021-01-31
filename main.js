@@ -289,7 +289,7 @@ const buttonEvents = () => {
   document.querySelector('#pets').addEventListener('click', buttonDelete);
 } 
 
-//Load pets into the dom, run even listeners
+//Load pets into the dom, run event listeners
 const init = () => {
   petBuilder(pets);
   buttonEvents();
