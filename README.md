@@ -7,10 +7,10 @@
 ## Wireframes
 - ![Image](https://github.com/nss-nightclass-projects/pet-adoption/raw/master/MockUp1.png)
  
- ## Site link
+## Site link
 - https://jm-pet-adoption.netlify.app/
 
-##Project Board
+## Project Board
 - https://github.com/Greenfin17/pet-adoption/projects/1
 
 ## User
