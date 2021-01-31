@@ -2,7 +2,7 @@
 
 ## Overview
 - This site displays pets available for adoption
-- The user can filter the pets by type, i.e. cats, dogs, etc.
+- The user can filter the pets by type, dogs, cats or dinasaurs.
   
 ## Wireframes
 - ![Image](https://github.com/nss-nightclass-projects/pet-adoption/raw/master/MockUp1.png)
