@@ -9,6 +9,7 @@ body {
   justify-content: space-around;
 }
 
+/* Colors for types of pets */
 #all {
   background-color: #22aa22;
 }
@@ -34,7 +35,6 @@ body {
   background-color: #f5f790;
 }
 
-
 #pets{
   margin-bottom: 5%;
 }
@@ -53,6 +53,12 @@ h1 {
 .my-3 {
   margin-left: 1rem;
   margin-right: 1rem;
+  text-align: center;
+}
+
+/* hide deleted cards after click, before re-painting the dom */
+.deleted {
+  display: none;
 }
 
 .pet-name {
@@ -74,3 +80,4 @@ h1 {
   text-align: center;
   font-size: 1.1em;
 }
+

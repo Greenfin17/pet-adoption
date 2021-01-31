@@ -211,24 +211,32 @@ const pets = [
     }
   ];
 
-console.log("CONNECTED");
+// Add key to pets, for deletion 
+const addKeyToPets = (array) => {
+  for(let i = 0; i < array.length; i++) {
+    array[i].key = i;
+  }
+}
+addKeyToPets(pets);
 
 const printDom = (divID, textToPrint)  => {
   document.querySelector(divID).innerHTML = textToPrint;
 }
 
+//print pet cards to the dom 
 const petBuilder = (pets) => {
   let domString = '';
   let i = 0;
   for(let item of pets) {
     domString += 
-      `<div class="card my-3" style="width: 20rem;" id=${i}>
+      `<div class="card my-3" style="width: 20rem;" id="card_${i}">
         <div class="card-body">
           <p class="card-text pet-name">${item.name}</p>
           <div class="img-container" style="background-image: url('${item.imageUrl}');"></div>
           <p class="card-text pet-color">Favorite Color:  ${item.color}</p>
           <p class="card-text pet-skill">${item.specialSkill}</p>
           <p class="card-text pet-type ${item.typeOfPet}">${item.typeOfPet}</p>
+          <button type="button" class="btn btn-primary adopt" id="${item.key}">Adopt Me!</button>
         </div>
       </div>`; 
     i++;
@@ -236,7 +244,7 @@ const petBuilder = (pets) => {
    printDom('#pets', domString);
 }
 
-
+//Filter results by pet type
 const buttonClick = (e) => {
   const button_Id = e.target.id;
 
@@ -253,19 +261,32 @@ const buttonClick = (e) => {
   }
 }
 
+//Delete / Adopt a pet
+const buttonDelete = (e) => {
+  // get card Id for hiding after deletion
+  let card_Id = e.target.parentNode.parentNode.id;
+  for(let i = 0; i < pets.length; i++) {
+    if(pets[i].key == e.target.id) {
+      pets.splice(i,1)
+    }
+  }
+  // hide pet card from display before dom is re-written
+  document.getElementById(card_Id).classList.add("deleted");
+}
 
+//All button events
 const buttonEvents = () => {
   document.querySelector('#all').addEventListener('click', buttonClick);
   document.querySelector('#dog').addEventListener('click', buttonClick);
   document.querySelector('#cat').addEventListener('click', buttonClick );
   document.querySelector('#dinosaur').addEventListener('click', buttonClick );
-
-
+  document.querySelector('#pets').addEventListener('click', buttonDelete);
 } 
 
+//Load pets into the dom, run even listeners
 const init = () => {
-  buttonEvents();
   petBuilder(pets);
+  buttonEvents();
 
 }
 
