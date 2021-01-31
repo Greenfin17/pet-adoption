@@ -5,7 +5,7 @@
 - The user can filter the pets by type, i.e. cats, dogs, etc.
   
 ## Wireframes
-- https://github.com/nss-nightclass-projects/pet-adoption/raw/master/MockUp1.png
+- ![Image](https://github.com/nss-nightclass-projects/pet-adoption/raw/master/MockUp1.png)
  
  ## Site link
 - https://jm-pet-adoption.netlify.app/
