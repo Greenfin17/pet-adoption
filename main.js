@@ -229,7 +229,7 @@ const petBuilder = (pets) => {
   let i = 0;
   for(let item of pets) {
     domString += 
-      `<div class="card my-3" style="width: 20rem;" id="card_${i}">
+      `<div class="card my-3" id="card_${i}">
         <div class="card-body">
           <p class="card-text pet-name">${item.name}</p>
           <div class="img-container" style="background-image: url('${item.imageUrl}');"></div>
@@ -265,14 +265,18 @@ const buttonClick = (e) => {
 const buttonDelete = (e) => {
   // get card Id for hiding after deletion
   let card_Id = e.target.parentNode.parentNode.id;
+  let adopted = false;
   if(e.target.type === "button") {
     for(let i = 0; i < pets.length; i++) {
       if(pets[i].key == e.target.id) {
+        adopted = true;
         pets.splice(i,1)
       }
     }
     // hide pet card from display before dom is re-written
-    document.getElementById(card_Id).classList.add("deleted");
+    if(adopted) {
+      document.getElementById(card_Id).classList.add("deleted");
+    }
   }
 }
 
