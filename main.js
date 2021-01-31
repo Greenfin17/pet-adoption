@@ -265,13 +265,15 @@ const buttonClick = (e) => {
 const buttonDelete = (e) => {
   // get card Id for hiding after deletion
   let card_Id = e.target.parentNode.parentNode.id;
-  for(let i = 0; i < pets.length; i++) {
-    if(pets[i].key == e.target.id) {
-      pets.splice(i,1)
+  if(e.target.type === "button") {
+    for(let i = 0; i < pets.length; i++) {
+      if(pets[i].key == e.target.id) {
+        pets.splice(i,1)
+      }
     }
+    // hide pet card from display before dom is re-written
+    document.getElementById(card_Id).classList.add("deleted");
   }
-  // hide pet card from display before dom is re-written
-  document.getElementById(card_Id).classList.add("deleted");
 }
 
 //All button events
