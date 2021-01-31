@@ -10,6 +10,9 @@
  ## Site link
 - https://jm-pet-adoption.netlify.app/
 
+##Project Board
+- https://github.com/Greenfin17/pet-adoption/projects/1
+
 ## User
 - The user is someone interested in adopting a pet.
 
