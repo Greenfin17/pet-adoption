@@ -18,4 +18,4 @@
   ![Image](https://user-images.githubusercontent.com/51683901/106372440-46f7e600-6335-11eb-80c8-2d334ddce9de.png)
 
 ## Loom Video
-  ![Video](https://www.loom.com/share/eb6e61f49ac64950b3b021c3ff1847c6)
+  https://www.loom.com/share/eb6e61f49ac64950b3b021c3ff1847c6
