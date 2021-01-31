@@ -1,5 +1,5 @@
 body {
-  margin 0;
+  margin: 0;
   background-color: #b6cab6;
 }
 
@@ -54,6 +54,7 @@ h1 {
   margin-left: 1rem;
   margin-right: 1rem;
   text-align: center;
+  width: 20rem;
 }
 
 /* hide deleted cards after click, before re-painting the dom */
