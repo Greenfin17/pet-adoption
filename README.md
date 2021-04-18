@@ -8,6 +8,8 @@
 - ![Image](https://github.com/nss-nightclass-projects/pet-adoption/raw/master/MockUp1.png)
  
 ## Site link
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1c6fda28-cd9b-4788-b214-35e7bce3d06b/deploy-status)](https://app.netlify.com/sites/jm-pet-adoption/deploys)
+
 - https://jm-pet-adoption.netlify.app/
 
 ## Project Board
